@@ -19,7 +19,6 @@ module.exports = (grunt) ->
     "shell:clientjade"
     "notify:appstarted"
     "shell:open_app"
-    "connect"
     "watch"
   ]
   

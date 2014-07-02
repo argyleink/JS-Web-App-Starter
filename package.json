@@ -9,7 +9,6 @@
     "grunt-bump":             "*",
     "grunt-concurrent":       "*",
     "grunt-contrib-clean":    "*",
-    "grunt-contrib-connect":  "*",
     "grunt-contrib-copy":     "*",
     "grunt-contrib-jade":     "*",
     "grunt-contrib-stylus":   "*",
