@@ -16,5 +16,5 @@ server.listen(3000, "127.0.0.1", function(){
 // test REST endpoint
 router.get('/api/user/:id', function(req, res) {
   console.log(req.params);
-  res.send('User ' + req.params.id);
+  res.send('Sup ' + req.params.id);
 });
