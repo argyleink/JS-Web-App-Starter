@@ -2,11 +2,28 @@ var http      = require('http');
 var path      = require('path');
 var async     = require('async');
 var express   = require('express');
+var mysql     = require('mysql');
 
-var router = express();
+var router = express().use(express.static(path.resolve(__dirname, 'client')));
 var server = http.createServer(router);
 
-router.use(express.static(path.resolve(__dirname, 'client')));
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : ''
+});
+
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log(err);
+});
+
+connection.query('select * from user', function(err, rows, fields) {
+  if (err) throw err;
+  console.log('Data row: ', rows[0]);
+});
+
+connection.end();
 
 server.listen(3000, "127.0.0.1", function(){
   var addr = server.address();

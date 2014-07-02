@@ -1,11 +1,14 @@
 {
-  "name":     "API",
-  "version":  "0.0.1",
-  "author":   "Adam Argyle",
-  "private":  false,
-  "main":     "app.js",
+  "name":         "API",
+  "description":  "API for Nginx routes",
+  "repository":   "https://github.com/argyleink/JS-Web-App-Starter",
+  "version":      "0.0.1",
+  "author":       "Adam Argyle",
+  "private":      false,
+  "main":         "app.js",
   "dependencies": {
     "async": "~0.2.8",
-    "express": "~3.2.4"
+    "express": "~3.2.4",
+    "node-mysql": "*"
   }
 }
