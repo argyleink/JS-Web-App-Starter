@@ -2,7 +2,7 @@
 ##### Back End:
 - Nginx  
 - Express  
-
+- MySQL
 
 ##### Front End:
 - JS  
@@ -25,15 +25,12 @@
 - [Node & NPM](http://nodejs.org/)
 - Bower `sudo npm install -g bower`
 - Grunt `sudo npm install -g grunt-cli`
+- Internet, doi
 
 #### Steps
-1. Clone and cd into this repo directory from terminal  
-1. Run `bash setup.sh`.  
-This installs the node modules, bower components, clientside jade library, and runs the dev grunt task
-2. Run `librarian-chef install`.  
-This downloads the cookbooks we'll need to provision the server that vagrant is about to spin up.
-3. Run `vagrant up`.  
-This will run for a few minutes, but when it's done, you'll have node and nginx up and running, ready for a rest based modern web app.
+From the root folder of this repo, run `bash setup.sh`. You may be prompted for your password, for some globally installed items. 
+
+This installs the node modules, bower components, jade template library, and runs the dev grunt task. Then this downloads the cookbooks we'll need to provision the server that vagrant is about to spin up. This will run for a few minutes, but when it's done, you'll have node and nginx up and running, ready for a rest based modern web app.
 
 #### Note
 After you've run setup, subsequent app runs should be done with `grunt`  
