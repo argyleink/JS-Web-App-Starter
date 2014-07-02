@@ -3,4 +3,4 @@ module.exports =
     command: "clientjade app/templates > dist/js/templates.js"
 
   open_app:
-    command: "open 'http://0.0.0.0:3030'"
+    command: "open 'http://1.3.3.7'"
