@@ -1,0 +1,7 @@
+.DS_Store
+bower_components/
+dist/
+node_modules/
+cookbooks/
+tmp/
+.vagrant/
