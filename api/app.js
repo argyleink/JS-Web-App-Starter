@@ -1,8 +1,20 @@
-var http = require('http');
+var http      = require('http');
+var path      = require('path');
+var async     = require('async');
+var express   = require('express');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-}).listen(3000, "127.0.0.1");
+var router = express();
+var server = http.createServer(router);
 
-console.log('Server running at http://127.0.0.1:3000/');
+router.use(express.static(path.resolve(__dirname, 'client')));
+
+server.listen(3000, "127.0.0.1", function(){
+  var addr = server.address();
+  console.log("Server listening at", addr.address + ":" + addr.port);
+});
+
+// test REST endpoint
+router.get('/api/user/:id', function(req, res) {
+  console.log(req.params);
+  res.send('User ' + req.params.id);
+});
