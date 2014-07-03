@@ -3,14 +3,14 @@ echo -e "\033[1;32mSTATUS:\033[m Post provisioning started, this sets up Nginx, 
 echo -e "\033[1;32mSTATUS:\033[m Flushing MySQL DB priveleges"
 mysql -u root -ppassword -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 
-echo "\033[1;32mSTATUS:\033[m Building MySQL DB and planting seed data if needed"
+echo -e "\033[1;32mSTATUS:\033[m Building MySQL DB and planting seed data if needed"
 USER=root
 PASSWORD=password
 RESULT=`mysql -u $USER -p$PASSWORD --skip-column-names -e "SHOW DATABASES LIKE 'app'"`
 if [ "$RESULT" = "app" ]; then
-  echo "\033[1;32mSTATUS:\033[m Database for this app already exists, skipping seed data import"
+  echo -e "\033[1;32mSTATUS:\033[m Database for this app already exists, skipping seed data import"
 else
-  echo "\033[1;32mSTATUS:\033[m Creating database 'app'"
+  echo -e "\033[1;32mSTATUS:\033[m Creating database 'app'"
   mysql -u $USER -p$PASSWORD < /var/db/create.sql
   mysql -u $USER -p$PASSWORD app < /var/db/seed.sql
 fi
