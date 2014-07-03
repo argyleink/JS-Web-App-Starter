@@ -35,6 +35,10 @@ From the root folder of this repo, run `bash setup.sh`. You may be prompted for 
 
 This installs the node modules, bower components, jade template library, and runs the dev grunt task. Then this downloads the cookbooks we'll need to provision the server that vagrant is about to spin up. This will run for a few minutes, but when it's done, you'll have node and nginx up and running, ready for a rest based modern web app.
 
+When setup is complete, your console should report a build success and show you the node api output. This means everything is working properly. So pop open a new console tab, and run `grunt`. This will compile all the assets for development, open a browser tab, and start watching for file changes. This is just like Yeoman, except, we're working against a VM instead of your local machine. The power is how easy this is to share with others =)
+
+To setup auto-reload, open `app/includes/scripts.jade` and put your ip address into the space where mine is. Uncomment the line, save, run `grunt`. 
+
 #### Result
 - App is running at `1.3.3.7` in your browser
 - API is running at `1.3.3.7/api` in your browser
