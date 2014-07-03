@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Javascript Web App Vagrant Starter by argyleink</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Javascript Web App Vagrant Starter</h1>
+        <h2>Vagrant/Nginx/Express/MySQL/Grunt/Jade/Stylus</h2>
+        <a href="https://github.com/argyleink/JS-Web-App-Starter" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a name="vagrant-powered-dev-environment" class="anchor" href="#vagrant-powered-dev-environment"><span class="octicon octicon-link"></span></a>Vagrant Powered Dev Environment</h3>
+
+<h5>
+<a name="back-end" class="anchor" href="#back-end"><span class="octicon octicon-link"></span></a>Back End:</h5>
+
+<ul>
+<li>Nginx<br>
+</li>
+<li>Express<br>
+</li>
+<li>MySQL</li>
+</ul><h5>
+<a name="front-end" class="anchor" href="#front-end"><span class="octicon octicon-link"></span></a>Front End:</h5>
+
+<ul>
+<li>JS<br>
+</li>
+<li>Jade<br>
+</li>
+<li>Stylus</li>
+</ul><h3>
+<a name="whats-inside" class="anchor" href="#whats-inside"><span class="octicon octicon-link"></span></a>What's Inside?</h3>
+
+<ul>
+<li>Automagic server</li>
+<li>Best static file server out there</li>
+<li>Node/Express API started for easy routing to DB</li>
+<li>Clean Grunt task architecture</li>
+<li>Dev and Prod builds (min and non-min static files)</li>
+<li>Autoreload</li>
+<li>Jade everywhere! Jade for static HTML generation and for client side templating</li>
+<li>Stylus with Nib</li>
+<li>Bower component management</li>
+</ul><h2>
+<a name="first-time-setup" class="anchor" href="#first-time-setup"><span class="octicon octicon-link"></span></a>First Time Setup</h2>
+
+<h4>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h4>
+
+<ul>
+<li><a href="http://www.vagrantup.com/downloads.html">Vagrant</a></li>
+<li><a href="https://www.virtualbox.org/">Virtual Box</a></li>
+<li>Chef <code>gem install librarian-chef</code>
+</li>
+<li><a href="http://nodejs.org/">Node &amp; NPM</a></li>
+<li>Bower <code>sudo npm install -g bower</code>
+</li>
+<li>Grunt <code>sudo npm install -g grunt-cli</code>
+</li>
+<li>Internet, doi ;)</li>
+</ul><h4>
+<a name="steps" class="anchor" href="#steps"><span class="octicon octicon-link"></span></a>Steps</h4>
+
+<p>From the root folder of this repo, run <code>bash setup.sh</code>. You may be prompted for your password, for some globally installed items. </p>
+
+<p>This installs the node modules, bower components, jade template library, and runs the dev grunt task. Then this downloads the cookbooks we'll need to provision the server that vagrant is about to spin up. This will run for a few minutes, but when it's done, you'll have node and nginx up and running, ready for a rest based modern web app.</p>
+
+<p>When setup is complete, your console should report a build success and show you the node api output. This means everything is working properly. So pop open a new console tab, and run <code>grunt</code>. This will compile all the assets for development, open a browser tab, and start watching for file changes. This is just like Yeoman, except, we're working against a VM instead of your local machine. The power is how easy this is to share with others =)</p>
+
+<p>To setup auto-reload, open <code>app/includes/scripts.jade</code> and put your ip address into the space where mine is. Uncomment the line, save, run <code>grunt</code>. </p>
+
+<h4>
+<a name="result" class="anchor" href="#result"><span class="octicon octicon-link"></span></a>Result</h4>
+
+<ul>
+<li>App is running at <code>1.3.3.7</code> in your browser</li>
+<li>API is running at <code>1.3.3.7/api</code> in your browser</li>
+<li>Visit the app from another device on the same wifi with <code>COMP_IP_ADDRESS:3030</code>
+</li>
+<li>All the goodness of vagrant</li>
+<li>All the goodness of grunt</li>
+</ul><h4>
+<a name="commands-on-your-machine" class="anchor" href="#commands-on-your-machine"><span class="octicon octicon-link"></span></a>Commands on your machine</h4>
+
+<ul>
+<li>
+<code>grunt</code>: your goto build command</li>
+<li>
+<code>grunt dev</code>: a dev build without watching</li>
+<li>
+<code>grunt prod</code>: crunch it all</li>
+<li>
+<code>vagrant suspend</code>: put VM to sleep</li>
+</ul><h4>
+<a name="commands-on-virtual-machine" class="anchor" href="#commands-on-virtual-machine"><span class="octicon octicon-link"></span></a>Commands on virtual machine</h4>
+
+<blockquote>
+<p>First you need to run <code>vagrant ssh</code> to run these commands  </p>
+</blockquote>
+
+<ul>
+<li>
+<code>node /var/api/app.js</code>: start the node api server</li>
+<li>
+<code>mysql -u root -p</code>: connect to mysql cli</li>
+<li>
+<code>sudo nginx -s reload</code>: restart Nginx</li>
+</ul><h4>
+<a name="note" class="anchor" href="#note"><span class="octicon octicon-link"></span></a>Note</h4>
+
+<p>After you've run setup, subsequent app runs should be done with <code>vagrant up &amp;&amp; grunt</code><br>
+Test the API at <code>1.3.3.7/api/user/dood</code></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/argyleink/JS-Web-App-Starter/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/argyleink/JS-Web-App-Starter/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/argyleink/JS-Web-App-Starter"></a> is maintained by <a href="https://github.com/argyleink">argyleink</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
