@@ -1,13 +1,18 @@
-echo -e "\033[1;32m STATUS: Installing NPM Modules \033[m"
+echo -e "\033[1;32mSTATUS:\033[m Installing NPM Modules"
 npm install
 sudo npm install -g clientjade
-echo -e "\033[1;32m STATUS: Installing Bower Components \033[m"
+
+echo -e "\033[1;32mSTATUS:\033[m Installing Bower Components"
 bower install
-echo -e "\033[1;32m STATUS: Grunt first run \033[m"
+
+echo -e "\033[1;32mSTATUS:\033[m Grunt first run"
 grunt dev
-echo -e "\033[1;32m STATUS: Installing chef libs \033[m"
+
+echo -e "\033[1;32mSTATUS:\033[m Installing chef libs, can take a bit to kick in"
 librarian-chef install
-echo -e "\033[1;32m STATUS: Vagrant started, will be 2-5 minutes \033[m"
+
+echo -e "\033[1;32mSTATUS:\033[m Vagrant up started, will be 2-5 minutes depending if you have the vm cached"
 vagrant up
-echo -e "\033[1;32m STATUS: Server ready, running grunt with watch \033[m"
+
+echo -e "\033[1;32mSTATUS:\033[m Server ready, running grunt with watch"
 grunt
