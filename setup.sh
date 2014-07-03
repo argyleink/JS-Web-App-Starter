@@ -13,6 +13,3 @@ librarian-chef install
 
 echo -e "\033[1;32mSTATUS:\033[m Vagrant up started, will be 2-5 minutes depending if you have the vm cached"
 vagrant up
-
-echo -e "\033[1;32mSTATUS:\033[m Server ready, running grunt with watch"
-grunt
