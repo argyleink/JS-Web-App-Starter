@@ -8,9 +8,10 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 3030
 
   # set sync folder for static files
-  config.vm.synced_folder "server/", "/var/server/"
-  config.vm.synced_folder "dist/", "/var/www/"
-  config.vm.synced_folder "api/", "/var/api/"
+  config.vm.synced_folder "startup_data/",  "/var/db/"
+  config.vm.synced_folder "server/",        "/var/server/"
+  config.vm.synced_folder "dist/",          "/var/www/"
+  config.vm.synced_folder "api/",           "/var/api/"
 
   # run chef cookbooks
   config.vm.provision :chef_solo do |chef|
@@ -47,11 +48,6 @@ Vagrant.configure("2") do |config|
         :grants_path            => "/etc/mysql/grants.sql"
       }
     }
-  end
-
-  config.vm.provision :file do |file|
-    file.source      = "seed.sql"
-    file.destination = "/var/seed.sql"
   end
 
   config.vm.provision "shell", path: "post-provision.sh"
