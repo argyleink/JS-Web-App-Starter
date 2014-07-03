@@ -42,6 +42,19 @@ This installs the node modules, bower components, jade template library, and run
 - All the goodness of vagrant
 - All the goodness of grunt
 
+#### Commands on your machine
+- `grunt`: your goto build command
+- `grunt dev`: a dev build without watching
+- `grunt prod`: crunch it all
+- `vagrant suspend`: put VM to sleep
+
+#### Commands on virtual machine
+> First you need to run `vagrant ssh` to run these commands  
+
+- `node /var/api/app.js`: start the node api server
+- `mysql -u root -p`: connect to mysql cli
+- `sudo nginx -s reload`: restart Nginx
+
 #### Note
 After you've run setup, subsequent app runs should be done with `vagrant up && grunt`  
 Test the API at `1.3.3.7/api/user/dood`
