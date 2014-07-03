@@ -9,6 +9,6 @@
   "dependencies": {
     "async": "~0.2.8",
     "express": "~3.2.4",
-    "node-mysql": "*"
+    "mysql": "*"
   }
 }
