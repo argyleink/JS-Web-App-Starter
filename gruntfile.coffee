@@ -37,6 +37,7 @@ module.exports = (grunt) ->
     "stylus:compile" 
     "jade:release"
     "uglify:prod"
-    "cssc" 
+    "cssc"
+    "cssshrink"
     "notify:prod"
   ]
