@@ -18,11 +18,6 @@
 		},
 		{
 			"follow_symlinks": true,
-			"name": "API",
-			"path": "api"
-		},
-		{
-			"follow_symlinks": true,
 			"name": "Dist",
 			"path": "dist"
 		},
@@ -40,7 +35,6 @@
 			"folder_exclude_patterns":
 			[
 				"app",
-				"api",
 				"bower_components",
 				"dist",
 				"tasks"

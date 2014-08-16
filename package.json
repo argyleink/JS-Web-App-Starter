@@ -3,24 +3,35 @@
   "version": "0.0.1",
   "author": "Adam Argyle",
   "private": false,
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argyleink/website.git"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install && grunt",
+    "start": "node server.js"
+  },
   "devDependencies": {
-    "css-condense": "*",
-    "grunt": "*",
-    "grunt-bump": "*",
-    "grunt-concurrent": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-jade": "*",
-    "grunt-contrib-stylus": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-cssc": "*",
-    "grunt-cssshrink": "0.0.7",
-    "grunt-newer": "*",
-    "grunt-notify": "*",
-    "grunt-shell": "*",
-    "load-grunt-configs": "*",
-    "matchdep": "*",
-    "time-grunt": "*"
+    "bower":                  "*",
+    "clientjade":             "*",
+    "css-condense":           "*",
+    "grunt-bump":             "*",
+    "grunt-concurrent":       "*",
+    "grunt-contrib-clean":    "*",
+    "grunt-contrib-connect":  "*",
+    "grunt-contrib-copy":     "*",
+    "grunt-contrib-jade":     "*",
+    "grunt-contrib-stylus":   "*",
+    "grunt-contrib-uglify":   "*",
+    "grunt-contrib-watch":    "*",
+    "grunt-cssc":             "*",
+    "grunt-cssshrink":        "*",
+    "grunt-newer":            "*",
+    "grunt-notify":           "*",
+    "grunt-shell":            "*",
+    "load-grunt-configs":     "*",
+    "matchdep":               "*",
+    "time-grunt":             "*"
   }
 }

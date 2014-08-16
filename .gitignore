@@ -1,5 +1,5 @@
 .DS_Store
-bower_components/
+app/js/libs/
 dist/
 node_modules/
 npm-debug.log
